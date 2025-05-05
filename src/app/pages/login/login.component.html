@@ -1,0 +1,34 @@
+ <main>
+
+
+<section class="carro"> 
+
+    <img src="ranger.png" alt="ford ranger" class="ranger">
+
+</section>
+
+<section class="form-section">
+
+    <img src="ford.png" alt="logo da ford" class="logo-ford">
+
+ <h4 class="text-center">Login</h4>
+
+ <form (ngSubmit)="login()">
+    <div class="mb-3 input-group " style="width: 500px;">
+        <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+        <input type="text" [(ngModel)]="usuario" name="usuario" class="form-control" placeholder="Digite seu usuário">
+      </div>
+  
+
+    <div class="mb-3 input-group ">
+    <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+    <input type="password" [(ngModel)]="senha" name="senha" class="form-control" placeholder="Digite sua senha">  </div>
+
+  <button type="submit" class="btn btn-primary w-100">Entrar</button>
+  
+</form>
+
+</section>
+
+
+</main>
