@@ -35,6 +35,9 @@ main{
     background-color: #F0F0F0;
 }
 
+.form-control{
+    width: 30rem;
+}
 
 .logo-ford{
     position: absolute;

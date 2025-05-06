@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,22 +15,34 @@ import { CommonModule } from '@angular/common';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  usuario: string = '';
-  senha: string = '';
-loginForm: any;
+  nome = '';
+  senha  = '';
+  erroLogin = '';
 
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient, private router: Router) {}
 
   login() {
     const body = {
-      usuario: this.usuario,
+      nome: this.nome,
       senha: this.senha
     };
 
-    this.http.post('http://localhost:3000/login', body)
-      .subscribe(
-        res => console.log('Login bem-sucedido', res),
-        err => console.error('Erro no login', err)
-      );
+    this.http.post<any>('http://localhost:3001/login',body).subscribe({
+      next: (res)=>{
+        alert('Login realizado com sucesso! Bem-vindo, ' + res.nome);
+        this.erroLogin = '';
+        this.router.navigate(['/home']);
+      },
+      error:(err) =>{
+        if (err.status === 400 || err.status === 401) {
+          this.erroLogin = err.error.message;
+        } else {
+          this.erroLogin = 'Erro ao conectar com o servidor.';
+        }
+        alert(this.erroLogin); // mostrar mensagem real do erro
+      }
+
+    });   
   }
 }

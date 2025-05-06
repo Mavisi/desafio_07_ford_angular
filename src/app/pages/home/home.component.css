@@ -1,0 +1,30 @@
+main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* border: solid 5px black; */
+}
+
+
+.tela_inicial{
+
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    height: 30rem;
+    width: 50rem;
+    /* border: solid 5px black; */
+    background-color: #bdc3c7;
+    opacity: 0.8;
+}
+
+.texto{
+    margin-bottom: 25rem;
+    margin-right: 35rem;
+    font-weight: 500;
+    border: solid 1px black;
+    
+}

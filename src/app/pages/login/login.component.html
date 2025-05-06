@@ -13,42 +13,26 @@
 
  <h4 class="text-center">Login</h4>
 
- <form (ngSubmit)="login()">
-    <div class="mb-3 input-group " style="width: 500px;">
-        <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
-        <input type="text"
-           [(ngModel)]="usuario"
-           name="usuario"
-           required
-           minlength="3"
-           class="form-control"
-           placeholder="Digite seu usuário"
-           #usuarioField="ngModel">
-      </div>
-    
-      <div *ngIf="usuarioField.invalid && usuarioField.touched" class="text-danger small">
-        Usuário é obrigatório (mínimo 3 caracteres).
-      </div>
+ <form (ngSubmit)="login()" novalidate>
 
-    <div class="mb-3 input-group ">
+  <div class="mb-3 input-group">
+    <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+    <input type="text" [(ngModel)]="nome" name="nome" class="form-control" placeholder="Digite seu nome">
+  </div>
+
+  <div class="mb-3 input-group">
     <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
-    <input type="password"
-           [(ngModel)]="senha"
-           name="senha"
-           required
-           minlength="4"
-           class="form-control"
-           placeholder="Digite sua senha"
-           #senhaField="ngModel">
+    <input type="password" [(ngModel)]="senha" name="senha" class="form-control" placeholder="Digite sua senha">
   </div>
 
-  <div *ngIf="senhaField.invalid && senhaField.touched" class="text-danger small">
-    Senha é obrigatória (mínimo 4 caracteres).
-  </div>
+  <button type="submit" class="btn btn-primary w-100">Entrar</button>
 
-  <button type="submit" class="btn btn-primary w-100" [disabled]="loginForm.invalid">Entrar</button>
-  
+  <!-- <div *ngIf="erroLogin" class="alert alert-danger mt-3">
+    {{ erroLogin }}
+  </div> -->
+
 </form>
+
 
 </section>
 
