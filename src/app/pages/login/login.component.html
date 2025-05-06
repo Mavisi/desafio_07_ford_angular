@@ -16,15 +16,37 @@
  <form (ngSubmit)="login()">
     <div class="mb-3 input-group " style="width: 500px;">
         <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
-        <input type="text" [(ngModel)]="usuario" name="usuario" class="form-control" placeholder="Digite seu usuário">
+        <input type="text"
+           [(ngModel)]="usuario"
+           name="usuario"
+           required
+           minlength="3"
+           class="form-control"
+           placeholder="Digite seu usuário"
+           #usuarioField="ngModel">
       </div>
-  
+    
+      <div *ngIf="usuarioField.invalid && usuarioField.touched" class="text-danger small">
+        Usuário é obrigatório (mínimo 3 caracteres).
+      </div>
 
     <div class="mb-3 input-group ">
     <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
-    <input type="password" [(ngModel)]="senha" name="senha" class="form-control" placeholder="Digite sua senha">  </div>
+    <input type="password"
+           [(ngModel)]="senha"
+           name="senha"
+           required
+           minlength="4"
+           class="form-control"
+           placeholder="Digite sua senha"
+           #senhaField="ngModel">
+  </div>
 
-  <button type="submit" class="btn btn-primary w-100">Entrar</button>
+  <div *ngIf="senhaField.invalid && senhaField.touched" class="text-danger small">
+    Senha é obrigatória (mínimo 4 caracteres).
+  </div>
+
+  <button type="submit" class="btn btn-primary w-100" [disabled]="loginForm.invalid">Entrar</button>
   
 </form>
 
