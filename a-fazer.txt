@@ -1,0 +1,3 @@
+implementar o auth-guard
+colocar o toggle 
+estilização dentro do input

@@ -7,9 +7,41 @@
             <p class="texto-info"> Sistema de dados FORD</p>
         </div>
 
-        <p> Seja bem vindo(a)!  </p>
+        <p class="texto-ola" > Seja bem vindo(a)!  </p>
+    </div>
+<!-- Botão do menu -->
+    <button class="btn btn-primary position-fixed top-0 start-0 m-3" type="button" data-bs-toggle="offcanvas" 
+    data-bs-target="#menuLateral" aria-controls="menuLateral">
+    <i class="bi bi-list"></i>
+    </button>
+  
+  <!-- Menu Lateral Offcanvas -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
+    
+    <div class="offcanvas-header">
+        <img src="ford.png" alt="ford" class="logo-menu">
+      <h5 class="offcanvas-title" id="menuLateralLabel">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
 
+    <div class="offcanvas-body">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <a routerLink="/home" class="text-decoration-none">🏠 Home</a>
+        </li>
+        <li class="list-group-item">
+          <a routerLink="/dashboard" class="text-decoration-none">📊 Dashboard</a>
+        </li>
+      </ul>
+    </div>
+  
+</div>
+  
+    <button class="btn btn-danger position-fixed top-0 end-0 m-3" (click)="logout()">
+    <i class="bi bi-box-arrow-right"></i> Sair
+     </button>
+
+   <!-- <button class="btn btn-primary">Teste Bootstrap</button> -->
 
 
 </main>

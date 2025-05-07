@@ -11,6 +11,7 @@ main{
 .tela_inicial{
 
     display: flex;
+    flex-direction: column;
     position: absolute;
     align-items: center;
     justify-content: center;
@@ -22,8 +23,9 @@ main{
 }
 
 .texto{
-    width: 49.99rem;
-    margin-bottom: 27.4rem;
+    
+    width: 50rem;
+    margin-bottom: 27.3rem;
     font-weight: 500;
     border: solid 1px #C0C0C0	;
     box-shadow: 0 8px 6px -4px rgba(0, 0, 0, 0.5);
@@ -33,5 +35,29 @@ main{
 .texto-info{
     margin-left: 1rem;
     
-    
+}
+
+.texto-ola{
+    position: absolute;
+    margin-bottom: 20rem;
+    margin-right: 40rem;
+    /* border:solid 1px black; */
+    font-weight: bold;
+    color: blue;
+}
+
+.offcanvas-header{
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+
+}
+
+.offcanvas-title{
+    padding-top: 3rem;
+}
+
+.logo-menu{
+    width: 10rem;
+
 }
