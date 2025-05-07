@@ -7,7 +7,9 @@
   </header>
 
 <main>
-
+  <!-- <section class="container-geral"> -->
+    <div class="elementos-meio">
+  
     <button class="btn btn-primary position-fixed top-0 start-0 m-3" type="button" data-bs-toggle="offcanvas" 
     data-bs-target="#menuLateral" aria-controls="menuLateral">
     <i class="bi bi-list"></i>
@@ -16,7 +18,7 @@
       <!-- Menu Lateral Offcanvas -->
      <div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
     
-    <div class="offcanvas-header">
+    <div class="offcanvas-header ">
         <img src="ford.png" alt="ford" class="logo-menu">
       <h5 class="offcanvas-title" id="menuLateralLabel">Menu</h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -39,10 +41,13 @@
         <i class="bi bi-box-arrow-right"></i> Sair
          </button>
 
-      <!-- Seletor de veículo -->
-  <div class="mb-4">
+  <!-- Linha combinada com seletor e cards -->
+<div class="linha-dashboard d-flex flex-wrap justify-content-center align-items-start gap-4 mb-4">
+
+  <!-- Seletor de veículo -->
+  <div class="select-veiculo">
     <label for="veiculoSelect" class="form-label fw-bold">Veículo</label>
-    <select id="veiculoSelect" class="form-select w-auto mx-auto"
+    <select id="veiculoSelect" class="form-select"
             [(ngModel)]="veiculoSelecionado"
             (change)="atualizarDashboard()">
       <option *ngFor="let v of veiculos" [ngValue]="v">{{ v.vehicle }}</option>
@@ -50,15 +55,14 @@
   </div>
 
   <!-- Cards de indicadores -->
-  <div class="row mb-4">
-    <div class="col-md-4" *ngFor="let card of cards">
-      <div class="border rounded p-3">
-        <h5>{{ card.titulo }}</h5>
-        <h4 class="text-primary">{{ card.valor }}</h4>
-        <small>Unid.</small>
-      </div>
-    </div>
+  <div *ngFor="let card of cards" class="card-dashboard border rounded p-3 text-center">
+    <h5>{{ card.titulo }}</h5>
+    <h4 class="text-primary">{{ card.valor }}</h4>
+    <small>Unid.</small>
   </div>
+
+</div>
+
 
   <!-- Imagem do carro -->
   <div class="mb-4">
@@ -66,6 +70,12 @@
          class="img-fluid" style="max-height: 300px;">
   </div>
 
+<!-- </section> -->
+</div>
+</main>
+
+
+<footer>
   <!-- Tabela com dados técnicos -->
   <table class="table table-bordered table-striped">
     <thead class="table-primary">
@@ -89,8 +99,6 @@
       </tr>
     </tbody>
   </table>
-
-</main>
-
+</footer>
 
 </body>
