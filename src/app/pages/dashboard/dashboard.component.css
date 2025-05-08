@@ -59,7 +59,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid 1px red;
+    /* border: solid 1px red; */
     font-size: 2rem;
     font-weight: bold;
     margin-top: 1rem;

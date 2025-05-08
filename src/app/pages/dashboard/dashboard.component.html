@@ -71,34 +71,37 @@
   </div>
 
 <!-- </section> -->
+<table class="table table-bordered table-striped">
+  <thead class="table-primary">
+    <tr>
+      <th>Código - VIN</th>
+      <th>Odômetro</th>
+      <th>Nível de Combustível</th>
+      <th>Status</th>
+      <th>Lat.</th>
+      <th>Long.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="dados && veiculoSelecionado">
+      <td>{{ getVinPorVeiculo(veiculoSelecionado.vehicle) }}</td>
+      <td>{{ dados.odometro }} Km</td>
+      <td>{{ dados.nivelCombustivel }} %</td>
+      <td>{{ dados.status }}</td>
+      <td>{{ dados.lat }}</td>
+      <td>{{ dados.long }}</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </main>
 
 
 <footer>
+  <div class="elementos-footer">
   <!-- Tabela com dados técnicos -->
-  <table class="table table-bordered table-striped">
-    <thead class="table-primary">
-      <tr>
-        <th>Código - VIN</th>
-        <th>Odômetro</th>
-        <th>Nível de Combustível</th>
-        <th>Status</th>
-        <th>Lat.</th>
-        <th>Long.</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngIf="dados && veiculoSelecionado">
-        <td>{{ getVinPorVeiculo(veiculoSelecionado.vehicle) }}</td>
-        <td>{{ dados.odometro }} Km</td>
-        <td>{{ dados.nivelCombustivel }} %</td>
-        <td>{{ dados.status }}</td>
-        <td>{{ dados.lat }}</td>
-        <td>{{ dados.long }}</td>
-      </tr>
-    </tbody>
-  </table>
+ 
+</div>
 </footer>
 
 </body>
