@@ -25,6 +25,16 @@
     <input type="password" [(ngModel)]="senha" name="senha" class="form-control" placeholder="Digite sua senha">
   </div>
 
+  <div class="form-check mb-3 text-start">
+    <input class="form-check-input"
+           type="checkbox"
+           id="manterConectado"
+           [(ngModel)]="manterConectado"
+           name="manterConectado">
+    <label class="form-check-label" for="manterConectado">
+      Continuar conectado
+    </label>
+  </div>
   <button type="submit" class="btn btn-primary w-100">Entrar</button>
 
   <!-- <div *ngIf="erroLogin" class="alert alert-danger mt-3">

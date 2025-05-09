@@ -22,6 +22,10 @@ export class LoginComponent {
 
   constructor(private http: HttpClient, private router: Router) {}
 
+
+  manterConectado = false;
+  
+
   login() {
     const body = {
       nome: this.nome,
