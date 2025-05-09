@@ -75,9 +75,10 @@
 </div>
 </main>
 
-
+<!-- ---------------------------------------------------------------------------- -->
 <footer>
   <div class="elementos-footer">
+
   <!-- Tabela com dados técnicos -->
   <div class="container mt-4 text-center">
     <label for="vinInput" class="form-label fw-bold">Digite o código VIN</label>
@@ -89,8 +90,10 @@
            class="form-control w-50 mx-auto mb-3"/>
   
     <button class="btn btn-primary mb-4" (click)="buscarDadosPorVin()">Buscar</button>
-  
-    <table class="table table-bordered table-striped" *ngIf="dados">
+ <!-- ------------------------------------------------------------------------------- -->
+  <!-- Tabela com dados do veículo -->
+    <div class="minha-table">
+    <table class="table table-bordered table-striped tabela-conteudo" *ngIf="dados">
       <thead class="table-primary">
         <tr>
           <th>Odômetro</th>
@@ -110,7 +113,9 @@
         </tr>
       </tbody>
     </table>
-  
+  </div>
+
+  <!-- Mensagem de erro -->
     <div *ngIf="erroVin" class="alert alert-danger w-50 mx-auto">
       {{ erroVin }}
     </div>

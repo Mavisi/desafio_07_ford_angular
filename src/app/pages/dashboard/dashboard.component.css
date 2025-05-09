@@ -1,17 +1,25 @@
+
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height:60vh;
-    border: solid 5px red;
+  flex: 1; /* O segredo: faz o main "crescer" para ocupar o espaço restante */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   }
   .elementos-meio{
     height: 80%;
-    border: solid 5px black;
+    /* border: solid 5px black; */
   }
 
-  .tela_inicial {
+  /* .tela_inicial {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -19,10 +27,10 @@ main {
     justify-content: center;
     height: 30rem;
     width: 50rem;
-    /* border: solid 5px black; */
+    border: solid 5px black;
     background-color: #a9a9a9;
     opacity: 0.8;
-  }
+  } */
   
   .texto {
     width: 50rem;
@@ -75,7 +83,7 @@ main {
     font-weight: bold;
     color: #000000;
     margin-bottom: 1rem;
-    border: solid 1px red;
+    /* border: solid 1px red; */
   }
 
   /* .linha-dashboard {
@@ -97,7 +105,31 @@ main {
 
 
 footer{
-  height: 10rem;
-  /* background-color: #000000; */
-  /* border: solid 5px red; */
+  width: 100%;
+  padding: 2rem 0;
+  background-color: #f8f9fa;
+  /* border: solid 5px blue; */
+}
+
+.elementos-footer{
+  /* margin-top: 1%; */
+  margin-bottom: -1.4%;
+  /* border: solid 5px green; */
+ height: 16rem;
+
+
+}
+
+.minha-table{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+   /* border: solid 5px green; */
+}
+
+.tabela-conteudo{
+
+  /* width: 100%; */
+  min-width: 1880px;
+  /* border: solid 5px green; */
 }
