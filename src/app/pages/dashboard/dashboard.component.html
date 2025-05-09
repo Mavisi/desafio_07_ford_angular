@@ -70,29 +70,8 @@
          class="img-fluid" style="max-height: 300px;">
   </div>
 
-<!-- </section> -->
-<table class="table table-bordered table-striped">
-  <thead class="table-primary">
-    <tr>
-      <th>Código - VIN</th>
-      <th>Odômetro</th>
-      <th>Nível de Combustível</th>
-      <th>Status</th>
-      <th>Lat.</th>
-      <th>Long.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngIf="dados && veiculoSelecionado">
-      <td>{{ getVinPorVeiculo(veiculoSelecionado.vehicle) }}</td>
-      <td>{{ dados.odometro }} Km</td>
-      <td>{{ dados.nivelCombustivel }} %</td>
-      <td>{{ dados.status }}</td>
-      <td>{{ dados.lat }}</td>
-      <td>{{ dados.long }}</td>
-    </tr>
-  </tbody>
-</table>
+<!-- </section busca por vin> -->
+
 </div>
 </main>
 
@@ -100,7 +79,42 @@
 <footer>
   <div class="elementos-footer">
   <!-- Tabela com dados técnicos -->
- 
+  <div class="container mt-4 text-center">
+    <label for="vinInput" class="form-label fw-bold">Digite o código VIN</label>
+    <input type="text"
+           id="vinInput"
+           [(ngModel)]="vinDigitado"
+           (keyup.enter)="buscarDadosPorVin()"
+           placeholder="Ex: 2FRHDUYS2Y63NHD22455"
+           class="form-control w-50 mx-auto mb-3"/>
+  
+    <button class="btn btn-primary mb-4" (click)="buscarDadosPorVin()">Buscar</button>
+  
+    <table class="table table-bordered table-striped" *ngIf="dados">
+      <thead class="table-primary">
+        <tr>
+          <th>Odômetro</th>
+          <th>Nível de Combustível</th>
+          <th>Status</th>
+          <th>Lat.</th>
+          <th>Long.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ dados.odometro }} Km</td>
+          <td>{{ dados.nivelCombustivel }} %</td>
+          <td>{{ dados.status }}</td>
+          <td>{{ dados.lat }}</td>
+          <td>{{ dados.long }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="erroVin" class="alert alert-danger w-50 mx-auto">
+      {{ erroVin }}
+    </div>
+  </div>
 </div>
 </footer>
 

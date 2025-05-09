@@ -80,5 +80,28 @@ export class DashboardComponent {
   }
   
 
+  vinDigitado: string = '';
+  erroVin: string = '';
+
+  buscarDadosPorVin() {
+    if (!this.vinDigitado.trim()) {
+      this.erroVin = 'Por favor, digite um código VIN válido.';
+      this.dados = null;
+      return;
+    }
   
+    this.http.post<any>('http://localhost:3001/vehicleData', { vin: this.vinDigitado })
+    .subscribe({
+      next: res => {
+        this.dados = res;
+        this.erroVin = '';
+      },
+      error: err => {
+        this.dados = null;
+        this.erroVin = err.error?.message || 'Erro ao buscar dados do veículo.';
+      }
+    });
+  
+  
+  }
 }
