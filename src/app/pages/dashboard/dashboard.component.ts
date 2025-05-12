@@ -14,6 +14,13 @@ import { OnInit } from '@angular/core';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
+
+
+  logout() {
+    localStorage.removeItem('usuario'); // Remove dados de login
+    this.router.navigate(['/']);        // Redireciona para login
+  }
+
   veiculos: any[] = [];
   veiculoSelecionado: any = null;
 
@@ -74,10 +81,6 @@ export class DashboardComponent {
     } as const;
     return mapa[veiculo as keyof typeof mapa] || '';  }
 
-  logout() {
-    localStorage.removeItem('usuario'); // Remove dados de login
-    this.router.navigate(['/']);        // Redireciona para login
-  }
   
 
   vinDigitado: string = '';
