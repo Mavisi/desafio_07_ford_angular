@@ -37,10 +37,10 @@ Um sistema web construído com Angular e Bootstrap para visualização dinâmica
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Angular 17+** (Standalone Components)
+- **Angular 19** (Standalone Components)
 - **Bootstrap 5.3**
 - **TypeScript**
-- **HTML/CSS**
+- **HTML5/CSS**
 - **API Node.js (Express)**
 
 ---
