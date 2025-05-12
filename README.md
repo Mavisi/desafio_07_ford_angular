@@ -1,59 +1,115 @@
-# DesafioAngularFord
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10.
+# 🚗 Dashboard FORD
 
-## Development server
+Um sistema web construído com Angular e Bootstrap para visualização dinâmica de dados de veículos da marca FORD. O projeto inclui autenticação de login, cards informativos, busca por VIN, e interface responsiva com menu lateral e tabela técnica.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
+## 📸 Capturas de Tela
+
+![Tela de Login](login-page.png)  
+![Tela de home](home-page.png)
+![Dashboard](dashboard-page.png)
+
+---
+
+## 🚀 Funcionalidades
+
+- 🔐 **Login com validação**
+  - Campo de usuário e senha
+  - Opção de "Continuar conectado" com toggle
+- 📊 **Dashboard dinâmico**
+  - Seleção de veículos com `select`
+  - Cards com total de vendas, conectados e atualizações
+  - Imagem correspondente ao veículo selecionado
+- 🔍 **Busca por VIN**
+  - Input para digitar o código VIN
+  - Tabela com odômetro, combustível, status, localização
+- 🎨 **Interface responsiva**
+  - Menu lateral (offcanvas)
+  - Botão de logout
+  - Layout adaptável para desktops e tablets
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Angular 17+** (Standalone Components)
+- **Bootstrap 5.3**
+- **TypeScript**
+- **HTML/CSS**
+- **API Node.js (Express)**
+
+---
+
+## 🧪 Como Executar
+
+### 🔧 Backend
+
+1. Vá até a pasta `api`
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+3. Inicie o servidor:
+   ```bash
+   node index.js
+   ```
+4. A API estará em: `http://localhost:3001`
+
+### 🖥️ Frontend
+
+1. Vá até a pasta do Angular:
+   ```bash
+   cd desafio_07_ford_angular
+   ```
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+3. Inicie o servidor:
+   ```bash
+   ng serve
+   ```
+4. Acesse: `http://localhost:4200`
+
+---
+
+## 🧠 Requisitos de Login
+
+- **Usuário:** admin  
+- **Senha:** 123456
+
+---
+
+## 📁 Estrutura de Pastas
+
+```
+📦 desafio_07_ford_angular
+├── src
+│   ├── app
+│   │   ├── pages
+│   │   │   ├── login
+│   │   │   ├── dashboard
+│   ├── assets
+│   │   └── img/
+├── api
+│   └── index.js
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 🏁 Melhorias Futuras
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- [ ] Criptografia de sessão/localStorage
+- [ ] Implementar gráficos com Chart.js
+- [ ] Autenticação com JWT
+- [ ] Footer fixo em tela cheia com rolagem
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 👨‍💻 Desenvolvido por
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Marcos Vinicius Silva De Santana Junior**  
+Técnico em Informática • Estudante de Ciência e Tecnologia (UFBA)  
+[GitHub](https://github.com/Mavisi)
