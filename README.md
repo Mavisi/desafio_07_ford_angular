@@ -7,9 +7,9 @@ Um sistema web construído com Angular e Bootstrap para visualização dinâmica
 
 ## 📸 Capturas de Tela
 
-![Tela de Login](login-page.png)  
-![Tela de home](home-page.png)
-![Dashboard](dashboard-page.png)
+![Tela de Login](public/login-page.png)  
+![Tela de home](public/home-page.png)
+![Dashboard](public/dashboard-page.png)
 
 ---
 
