@@ -18,6 +18,9 @@ Um sistema web construído com Angular e Bootstrap para visualização dinâmica
 - 🔐 **Login com validação**
   - Campo de usuário e senha
   - Opção de "Continuar conectado" com toggle
+- 🏚️ **Home**
+  - Tela inicio após validação das credencias
+  - Funcionalidades do menu lateral e logout
 - 📊 **Dashboard dinâmico**
   - Seleção de veículos com `select`
   - Cards com total de vendas, conectados e atualizações
@@ -90,6 +93,7 @@ Um sistema web construído com Angular e Bootstrap para visualização dinâmica
 │   ├── app
 │   │   ├── pages
 │   │   │   ├── login
+|   |   |   ├── home
 │   │   │   ├── dashboard
 │   ├── assets
 │   │   └── img/
